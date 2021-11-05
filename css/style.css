@@ -1,0 +1,283 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-primary: #1d2243;
+  --color-secondary: #ffb45e;
+  --color-bg: #fff;
+  --color-bg-secondary: #f6f6f6;
+  --color-text: #1b1b1b;
+  --color-text-secondary: #999;
+  --font-family: 'Sarabun', sans-serif;
+}
+
+body {
+  min-height: 500vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  font-family: var(--font-family);
+  color: var(--color-text);
+}
+
+body ::-moz-selection {
+  background: transparent;
+  color: var(--color-secondary);
+}
+
+body ::selection {
+  background: transparent;
+  color: var(--color-secondary);
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+section {
+  padding: 6rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(2.5%, 1fr) (minmax(auto, 325px))[4] minmax(2.5%, 1fr);
+      grid-template-columns: minmax(2.5%, 1fr) repeat(4, minmax(auto, 325px)) minmax(2.5%, 1fr);
+}
+
+@media (max-width: 639px) {
+  section {
+    padding: 4rem 0;
+  }
+}
+
+section > * {
+  grid-column: 2 / -2;
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid rgba(27, 27, 27, 0.8);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header.hide {
+  -webkit-transform: translateY(-36px);
+          transform: translateY(-36px);
+}
+
+header .upper-nav {
+  background-color: var(--color-primary);
+}
+
+header .upper-nav > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 36px;
+  width: 95%;
+  max-width: 1300px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+header .upper-nav > div > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  font-size: 0.8125rem;
+}
+
+header .upper-nav > div > div a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+}
+
+header .upper-nav > div > div a svg {
+  fill: #fff;
+}
+
+header .lower-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  width: 95%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+header .lower-nav .logo svg {
+  display: block;
+  width: 180px;
+}
+
+header .lower-nav .logo svg path {
+  fill: var(--color-primary);
+}
+
+header .lower-nav nav {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .lower-nav nav > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .lower-nav nav > ul > li {
+  padding: 40px 1rem;
+  display: block;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+@media (min-width: 1025px) and (max-width: 1100px) {
+  header .lower-nav nav > ul > li {
+    font-size: 0.9375rem;
+  }
+}
+
+header .lower-nav nav > ul > li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-secondary);
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header .lower-nav nav > ul > li:hover::before, header .lower-nav nav > ul > li.active::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+header .lower-nav nav .tel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media (max-width: 1024px) {
+  header .lower-nav nav .tel {
+    display: none;
+  }
+}
+
+header .lower-nav nav .tel::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+header .lower-nav nav .tel:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+
+header .lower-nav nav .separator {
+  width: 1px;
+  height: 70px;
+  background-color: rgba(27, 27, 27, 0.8);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+/*# sourceMappingURL=style.css.map */
