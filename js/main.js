@@ -27,16 +27,42 @@
   window.addEventListener("scroll", checkScroll);
 })();
 
+
+let navResponsive = document.getElementsByTagName("header")[0];
+let hamburgerMenu = document.getElementsByClassName("hamburger")[0];
+let overlayMenu = document.getElementsByClassName("overlay")[0];
+hamburgerMenu.addEventListener("click", function() {
+  navResponsive.classList.toggle("open");
+  overlayMenu.classList.toggle("appear");
+})
+overlayMenu.addEventListener("click", function() {
+  navResponsive.classList.remove("open");
+  this.classList.remove("appear");
+})
+
+
+window.onload = function() {scrollFunction()};
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+    navResponsive.classList.remove("transparent");
+  } else {
+    navResponsive.classList.add("transparent");
+  }
+}
+
+
 function scrollToContainer() {
   const element = document.getElementById("scrollTarget");
-  const yOffset = -99;
+  const yOffset = -79;
   const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
   window.scrollTo({ top: y, behavior: 'smooth' });
 }
 
+
 function scrollToContainerBis() {
   const element = document.getElementById("scrollTargetBis");
-  const yOffset = -99;
+  const yOffset = -79;
   const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
   window.scrollTo({ top: y, behavior: 'smooth' });
 }
