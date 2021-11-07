@@ -281,46 +281,6 @@
       </div>
     </footer>
 
-    <!-- <section class="section-flash-infos" id="scrollTargetBis">
-      <div class="slideshow">
-        {% for annonce in extensions.flash_slider[10].annonces %}
-        {% if annonce.panneaux.afficher.actif is not defined or annonce.panneaux.afficher.actif == true %}
-        <article>
-          <div class="img">
-            {% if annonce.images[0] is empty %}
-            {% if conf.param.image_defaut == 1 %}
-            <img data-src-slide="public/img/medium/{{ conf.param.nom_image_defaut }}" alt="{{ annonce.titre }}" />
-            {% endif %}
-            {% else %}
-            <img {{ img_.srcset(annonce.images[0], 'big') }} alt="{{ annonce.images[0].legende }}" />
-            {% endif %}
-          </div>
-          <div>
-            <div class="headline">Nos actualités</div>
-            <div class="content" onclick="jalik('{{ annonce.url | jalik }}')">
-              <h2>
-                <a href="{{ annonce.url }}">{{ annonce.titre }}</a>
-              </h2>
-              <div class="txt_contenu">{{ annonce.extrait|extrait(160) }}</div>
-              <button class="btn">
-                <svg width="14" height="14" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
-                Lire la suite
-              </button>
-            </div>
-          </div>
-        </article>
-        {% endif %}
-        {% endfor %}
-      </div>
-    </section> -->
-
-    <!-- <section class="section-anns-refs">
-      <div class="headline">À découvrir</div>
-      {% include 'ext/association.html.twig' with {'associations': dernieres_annonces, 'limite': 3} %}
-    </section> -->
-    
-    <!-- <footer></footer> -->
-
     <script src="js/main.js"></script>
   </body>
 </html>
